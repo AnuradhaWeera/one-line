@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover" />
+  <meta name="theme-color" content="#0f3d44" />
+  <title>One Line</title>
+</head>
+<body>
+  <div id="wrap">
+    <div id="game">
+      <canvas id="cv" aria-label="Game board: draw one line with your finger"></canvas>
+
+      <div class="hud hidden" id="hud">
+        <div class="row">
+          <button class="ibtn" id="bMenu" aria-label="Levels"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+          <div class="lvl"><b id="lvlNum">Level 1</b><span id="lvlType"></span></div>
+          <button class="ibtn" id="bSound" aria-label="Sound on or off"><svg viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M16 9a4 4 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/></svg></button>
+          <button class="ibtn" id="bRetry" aria-label="Restart level"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.4-5.7"/><path d="M4 4v5h5"/></svg></button>
+        </div>
+        <div class="ink" id="ink"><i id="inkFill"></i></div>
+        <div class="hint" id="hint"></div>
+      </div>
+
+      <div class="screen" id="title">
+        <svg class="logo" viewBox="0 0 300 120" aria-hidden="true">
+          <circle cx="40" cy="80" r="13" fill="#fff"/><circle cx="150" cy="40" r="13" fill="#fff"/><circle cx="260" cy="80" r="13" fill="#fff"/>
+          <path d="M40 80 C 80 10, 110 10, 150 40 S 220 120, 260 80" fill="none" stroke="#ffd23f" stroke-width="9" stroke-linecap="round"/>
+        </svg>
+        <h1>One Line</h1>
+        <div class="tag">Every puzzle. One stroke.</div>
+        <button class="big" id="bPlay">Play</button>
+        <button class="ghost" id="bLevels">Levels</button>
+        <div class="note" id="version"></div>
+      </div>
+
+      <div class="screen hidden" id="levels">
+        <h2 class="screen-title">Levels</h2>
+        <div class="worlds" id="worlds"></div>
+        <button class="ghost" id="bBack">Back</button>
+      </div>
+
+      <div id="overlay" class="hidden" role="dialog" aria-live="polite">
+        <div class="card">
+          <h2 id="ovTitle"></h2>
+          <div class="stars" id="ovStars"></div>
+          <p id="ovMsg"></p>
+          <div class="btns">
+            <button class="ghost" id="ovRetry">Retry</button>
+            <button class="big" id="ovNext">Next</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
